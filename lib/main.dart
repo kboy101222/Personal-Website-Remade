@@ -23,7 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
-    base: 'Personal-Website-Remade',
+    // base: 'Personal-Website-Remade',
     title: 'personal_site_remade',
     styles: [
       // Special import rule to include to another css file.
@@ -44,6 +44,7 @@ void main() {
         fontSize: 2.rem,
       ),
     ],
+    head: [link(href: "styles.css", rel: "stylesheet")],
     body: App(),
   ));
 }

@@ -46,7 +46,7 @@ class App extends StatelessComponent {
           // The '&' refers to the parent selector of a nested style rules.
           css('&').styles(
             display: Display.flex,
-            height: 100.vh,
+            // height: 100.vh,
             flexDirection: FlexDirection.column,
             flexWrap: FlexWrap.wrap,
           ),
