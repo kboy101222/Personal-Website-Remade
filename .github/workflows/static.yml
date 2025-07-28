@@ -35,14 +35,13 @@ jobs:
         uses: actions/configure-pages@v5
       - name: 'Setup Dart'
         uses: dart-lang/setup-dart@v1.3
+      - name: 'Setup Flutter'
+        uses: subosito/flutter-action@v2
       - name: 'Build Jaspr'
         run: |
           dart pub global activate jaspr_cli
           source /home/runner/.bash_profile
           jaspr build --verbose
-        env:
-          PUB_ALLOW_PRERELEASE_SDK: "true"
-          BUILD_DAEMON: "true"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
