@@ -39,6 +39,9 @@ jobs:
         run: |
           dart pub global activate jaspr_cli
           jaspr build --verbose
+        env:
+          PUB_ALLOW_PRERELEASE_SDK: "true"
+          BUILD_DAEMON: "false"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
