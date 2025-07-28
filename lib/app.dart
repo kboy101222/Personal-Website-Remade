@@ -24,8 +24,14 @@ class App extends StatelessComponent {
     yield div(classes: 'main', [
       const Header(),
       Router(routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/about', title: 'About', builder: (context, state) => const About()),
+        Route(
+            path: '/',
+            title: 'Home',
+            builder: (context, state) => const Home()),
+        Route(
+            path: '/about',
+            title: 'About',
+            builder: (context, state) => const About()),
       ]),
     ]);
   }
@@ -36,21 +42,21 @@ class App extends StatelessComponent {
   // Must be a variable or getter of type [List<StyleRule>].
   @css
   static List<StyleRule> get styles => [
-    css('.main', [
-      // The '&' refers to the parent selector of a nested style rules.
-      css('&').styles(
-        display: Display.flex,
-        height: 100.vh,
-        flexDirection: FlexDirection.column,
-        flexWrap: FlexWrap.wrap,
-      ),
-      css('section').styles(
-        display: Display.flex,
-        flexDirection: FlexDirection.column,
-        justifyContent: JustifyContent.center,
-        alignItems: AlignItems.center,
-        flex: Flex(grow: 1),
-      ),
-    ]),
-  ];
+        css('.main', [
+          // The '&' refers to the parent selector of a nested style rules.
+          css('&').styles(
+            display: Display.flex,
+            height: 100.vh,
+            flexDirection: FlexDirection.column,
+            flexWrap: FlexWrap.wrap,
+          ),
+          css('section').styles(
+            display: Display.flex,
+            flexDirection: FlexDirection.column,
+            justifyContent: JustifyContent.center,
+            alignItems: AlignItems.center,
+            flex: Flex(grow: 1),
+          ),
+        ]),
+      ];
 }
