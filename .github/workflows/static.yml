@@ -38,6 +38,7 @@ jobs:
       - name: 'Build Jaspr'
         run: |
           dart pub global activate jaspr_cli
+          source /home/runner/.bash_profile
           jaspr build --verbose
         env:
           PUB_ALLOW_PRERELEASE_SDK: "true"
