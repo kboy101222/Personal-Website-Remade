@@ -16,7 +16,6 @@ class Home extends StatefulComponent {
 }
 
 class HomeState extends State<Home> {
-
   @override
   void initState() {
     super.initState();
@@ -34,11 +33,24 @@ class HomeState extends State<Home> {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield section([
-      img(src: 'images/logo.svg', width: 80),
-      h1([text('Welcome')]),
-      p([text('You successfully create a new Jaspr site.')]),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
+      h1([Text("Kyle George")]),
+      h2([Text("About Me")]),
+      p([
+        text(
+            "Hello, my name is Kyle George. I am a developer specializing in web application development")
+      ]),
+      h3([Text("Accolades")]),
+      ul([
+        li([
+          Text("Association of Computing Machinery (ACM) President at APSU")
+        ]),
+        li([Text("Top 3 at VandyHacks 2022")]),
+      ]),
+      h3([Text("Projects")]),
+      ul([
+        li([Text("This website!")]),
+        li([Text("TODO: Add more stuff")])
+      ])
     ]);
   }
 }

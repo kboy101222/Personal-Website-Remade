@@ -53,8 +53,8 @@ class App extends StatelessComponent {
           css('section').styles(
             display: Display.flex,
             flexDirection: FlexDirection.column,
-            justifyContent: JustifyContent.center,
-            alignItems: AlignItems.center,
+            justifyContent: JustifyContent.left,
+            alignItems: AlignItems.start,
             flex: Flex(grow: 1),
           ),
         ]),

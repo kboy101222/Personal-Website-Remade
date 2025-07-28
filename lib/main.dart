@@ -31,16 +31,17 @@ void main() {
       // Each style rule takes a valid css selector and a set of styles.
       // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body').styles(
-        width: 100.percent,
-        minHeight: 100.vh,
+        // width: 100.percent,
+        // minHeight: 100.vh,
         padding: Padding.zero,
-        margin: Margin.zero,
+        margin: Margin.fromLTRB(
+            Unit.pixels(10), Unit.pixels(0), Unit.pixels(10), Unit.pixels(0)),
         fontFamily: const FontFamily.list(
             [FontFamily('Roboto'), FontFamilies.sansSerif]),
       ),
       css('h1').styles(
         margin: Margin.unset,
-        fontSize: 4.rem,
+        fontSize: 2.rem,
       ),
     ],
     body: App(),
