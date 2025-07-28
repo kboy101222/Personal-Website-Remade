@@ -41,7 +41,7 @@ jobs:
           jaspr build --verbose
         env:
           PUB_ALLOW_PRERELEASE_SDK: "true"
-          BUILD_DAEMON: "false"
+          BUILD_DAEMON: "true"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
