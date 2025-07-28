@@ -23,6 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
+    base: 'Personal-Website-Remade',
     title: 'personal_site_remade',
     styles: [
       // Special import rule to include to another css file.
@@ -34,7 +35,8 @@ void main() {
         minHeight: 100.vh,
         padding: Padding.zero,
         margin: Margin.zero,
-        fontFamily: const FontFamily.list([FontFamily('Roboto'), FontFamilies.sansSerif]),
+        fontFamily: const FontFamily.list(
+            [FontFamily('Roboto'), FontFamilies.sansSerif]),
       ),
       css('h1').styles(
         margin: Margin.unset,
