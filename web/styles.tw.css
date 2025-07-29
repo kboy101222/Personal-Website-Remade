@@ -1,4 +1,4 @@
 @import "tailwindcss";
 /* @source "./public.{html,js}"; */
-@plugin "./daisyui.js";
+@plugin "daisyui";
 @plugin "@tailwindcss/typography";
