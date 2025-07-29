@@ -41,11 +41,9 @@ jobs:
         uses: actions/setup-node@v4
       - name: 'Install tailwindcss'
         run: |
-          curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
-          chmod +x tailwindcss-linux-x64
-          mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
+          npm install tailwindcss
           npm install -D @tailwindcss/typography
-          tailwindcss -i ./web/styles.tw.css -o ./web/styles.css
+          npx tailwindcss -i ./web/styles.tw.css -o ./web/styles.css
       - name: 'Build Jaspr'
         run: | 
           dart pub global activate jaspr_cli
