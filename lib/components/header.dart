@@ -10,16 +10,71 @@ class Header extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     var activePath = context.url;
 
+    // yield header([
+    //   nav([
+    //     for (var route in [
+    //       (label: 'Home', path: ''),
+    //       // (label: 'About', path: 'about'),
+    //     ])
+    //       div(classes: activePath == route.path ? 'active' : null, [
+    //         Link(to: route.path, child: text(route.label)),
+    //       ]),
+    //   ]),
+    // ]);
+
+    var routes = [
+      (label: 'Home', path: ''),
+      (label: 'About', path: 'about'),
+    ];
+
     yield header([
-      nav([
-        for (var route in [
-          (label: 'Home', path: ''),
-          // (label: 'About', path: 'about'),
+      div(classes: "fixed navbar bg-base-100 shadow-sm", [
+        div(classes: "navbar-start", [
+          div(classes: "dropdown", [
+            div(
+                attributes: {"tabindex": "0", "role": "button"},
+                classes: "btn btn-ghost lg:hidden",
+                [
+                  svg(
+                      attributes: {
+                        "xmlns": "http://www.w3.org/2000/svg",
+                        "fill": "none",
+                        "stroke": "currentColor"
+                      },
+                      classes: "h-5 w-5",
+                      viewBox: "0 0 24 24",
+                      [
+                        path(
+                            attributes: {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2"
+                            },
+                            d: "M4 6h16M4 12h8m-8 6h16",
+                            [])
+                      ])
+                ]),
+            ul(
+                classes:
+                    "menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow",
+                attributes: {
+                  "tabindex": "0"
+                },
+                [
+                  for (var route in routes)
+                    li([Link(to: route.path, child: text(route.label))])
+                ])
+          ])
+        ]),
+        div(classes: "navbar-center hidden lg:flex", [
+          ul(classes: "menu menu-horizontal px-1", [
+            for (var route in routes)
+              li(
+                  classes: activePath == route.path ? 'underline' : null,
+                  [Link(to: route.path, child: text(route.label))])
+          ])
         ])
-          div(classes: activePath == route.path ? 'active' : null, [
-            Link(to: route.path, child: text(route.label)),
-          ]),
-      ]),
+      ])
     ]);
   }
 

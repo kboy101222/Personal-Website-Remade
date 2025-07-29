@@ -53,10 +53,13 @@ class App extends StatelessComponent {
           css('section').styles(
             display: Display.flex,
             flexDirection: FlexDirection.column,
-            justifyContent: JustifyContent.left,
-            alignItems: AlignItems.start,
+            justifyContent: JustifyContent.center,
+            alignItems: AlignItems.center,
             flex: Flex(grow: 1),
           ),
+          css('section ul').styles(
+              // margin: Spacing.symmetric(horizontal: Unit.percent(20)),
+              alignSelf: AlignSelf.normal)
         ]),
       ];
 }

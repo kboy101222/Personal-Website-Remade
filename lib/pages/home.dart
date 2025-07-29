@@ -31,7 +31,7 @@ class HomeState extends State<Home> {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: "prose", [
+    yield section(classes: "prose w-full min-w-full", [
       h1([Text("Kyle George")]),
       h2([Text("About Me")]),
       p([
@@ -39,19 +39,19 @@ class HomeState extends State<Home> {
             "Hello, my name is Kyle George. I am a developer specializing in web application development and database design and management.")
       ]),
       h3([Text("Accolades")]),
-      ul([
+      ul(classes: "lg:mx-[25%]", [
         li([
           Text("Association of Computing Machinery (ACM) President at APSU")
         ]),
         li([Text("Top 3 at VandyHacks 2022")]),
       ]),
       h3([Text("Projects")]),
-      ul([
+      ul(classes: "lg:mx-[25%]", [
         li(classes: "link", [
           Link(
               url: Uri.parse(
                   "https://github.com/kboy101222/Personal-Website-Remade"),
-              children: [text("This website (I'm a backend dev primarily)")])
+              children: [text("This website")])
         ]),
         li([
           Link(
@@ -66,7 +66,10 @@ class HomeState extends State<Home> {
           text(" | "),
           Link(
               url: Uri.parse("https://kboy101222.github.io/MTG-Token-Manager"),
-              children: [text("(Working site)")])
+              children: [text("(Working site)")]),
+          ul([
+            li([text("Some functionality has been broken by browser updates")])
+          ])
         ]),
         li([
           Link(
@@ -83,7 +86,7 @@ class HomeState extends State<Home> {
         ])
       ]),
       h3([text("Programming Languages")]),
-      ul([
+      ul(classes: "lg:mx-[25%]", [
         li([text("HTML, CSS, JavaScript")]),
         ul([
           li([
@@ -99,7 +102,7 @@ class HomeState extends State<Home> {
         li([text("Python")])
       ]),
       h3([text("Platforms, Libraries, & Software")]),
-      ul([
+      ul(classes: "lg:mx-[25%]", [
         li([text("Flutter")]),
         li([text("Jaspr")]),
         li([text("Django")]),
@@ -110,7 +113,6 @@ class HomeState extends State<Home> {
         li([text("MySQL")]),
         li([text("Visual Studio Code")]),
       ]),
-      button(classes: "btn btn-primary", [text("Testing")])
     ]);
   }
 }
