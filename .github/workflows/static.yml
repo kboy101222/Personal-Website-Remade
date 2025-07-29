@@ -39,7 +39,7 @@ jobs:
           chmod +x tailwindcss-linux-x64
           mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
           npm install @tailwindcss/typography daisyui@latest
-          tailwindcss -i ./web/styles.tw.css -o ./web/styles.css
+          tailwindcss -h
       - name: 'Setup Dart'
         uses: dart-lang/setup-dart@v1.3
       - name: 'Setup Flutter'
