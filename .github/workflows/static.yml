@@ -39,11 +39,6 @@ jobs:
         uses: subosito/flutter-action@v2
       - name: 'Setup npm'
         uses: actions/setup-node@v4
-      - name: 'Install tailwindcss'
-        run: |
-          npm install tailwindcss
-          npm install -D @tailwindcss/typography
-          npx tailwindcss -i ./web/styles.tw.css -o ./web/styles.css
       - name: 'Build Jaspr'
         run: | 
           dart pub global activate jaspr_cli
