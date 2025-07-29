@@ -37,7 +37,7 @@ void main() {
             [FontFamily('Roboto'), FontFamilies.sansSerif]),
       ),
     ],
-    head: [link(href: "styles.css", rel: "stylesheet")],
+    head: [link(href: "./styles.css", rel: "stylesheet")],
     body: App(),
   ));
 }
