@@ -23,7 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
-    base: 'Personal-Website-Remade',
+    // base: 'Personal-Website-Remade',
     title: 'personal_site_remade',
     styles: [
       // Special import rule to include to another css file.
@@ -31,8 +31,8 @@ void main() {
       // Each style rule takes a valid css selector and a set of styles.
       // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body').styles(
-        margin: Margin.fromLTRB(
-            Unit.pixels(10), Unit.pixels(0), Unit.pixels(10), Unit.pixels(0)),
+        // margin: Margin.fromLTRB(
+        //     Unit.pixels(10), Unit.pixels(0), Unit.pixels(10), Unit.pixels(0)),
         fontFamily: const FontFamily.list(
             [FontFamily('Roboto'), FontFamilies.sansSerif]),
       ),

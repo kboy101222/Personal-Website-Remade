@@ -2,6 +2,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import '../constants/theme.dart';
+import 'icons.dart';
 
 class Header extends StatelessComponent {
   const Header({super.key});
@@ -24,35 +25,16 @@ class Header extends StatelessComponent {
 
     var routes = [
       (label: 'Home', path: ''),
-      (label: 'About', path: 'about'),
+      // (label: 'About', path: 'about')
     ];
 
-    yield div(classes: "fixed navbar bg-base-100 shadow-sm", [
+    yield div(classes: "fixed navbar bg-base-200 shadow-sm", [
       div(classes: "navbar-start", [
         div(classes: "dropdown", [
           div(
               attributes: {"tabindex": "0", "role": "button"},
               classes: "btn btn-ghost lg:hidden",
-              [
-                svg(
-                    attributes: {
-                      "xmlns": "http://www.w3.org/2000/svg",
-                      "fill": "none",
-                      "stroke": "currentColor"
-                    },
-                    classes: "h-5 w-5",
-                    viewBox: "0 0 24 24",
-                    [
-                      path(
-                          attributes: {
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round",
-                            "stroke-width": "2"
-                          },
-                          d: "M4 6h16M4 12h8m-8 6h16",
-                          [])
-                    ])
-              ]),
+              [CustomIcon("bars-3")]),
           ul(
               classes:
                   "menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow",
@@ -72,6 +54,14 @@ class Header extends StatelessComponent {
                 classes: activePath == route.path ? 'underline' : null,
                 [Link(to: route.path, child: text(route.label))])
         ])
+      ]),
+      div(classes: "navbar-end", [
+        CustomIcon("moon"),
+        input(
+            type: InputType.checkbox,
+            value: "light",
+            classes: "toggle theme-controller"),
+        CustomIcon("sun")
       ])
     ]);
   }

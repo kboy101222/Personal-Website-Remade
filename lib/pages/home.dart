@@ -31,14 +31,14 @@ class HomeState extends State<Home> {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield section(classes: "prose w-full min-w-full", [
+    yield section(classes: "prose w-full min-w-full flex", [
       h1([Text("Kyle George")]),
       h2([Text("About Me")]),
       p([
         text(
             "Hello, my name is Kyle George. I am a developer specializing in web application development and database design and management.")
       ]),
-      h3([Text("Accolades")]),
+      h3(classes: "self-center", [Text("Accolades")]),
       ul(classes: "lg:mx-[25%]", [
         li([
           Text("Association of Computing Machinery (ACM) President at APSU")
